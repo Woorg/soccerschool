@@ -1,0 +1,54 @@
+.social
+	padding-top 16px
+	padding-right 22px
+	width 292px
+	display block
+	color #FFF
+	&__title
+		margin-bottom 13px
+		font-size 19px
+		font-family $sR
+	&__list
+		padding-left 8px
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
+	&__item
+		.social__icon
+			fill #fff
+			tr(all .3s ease)
+	&__item_fb
+		.social__icon
+			width 8px
+			height 16px
+	&__item_vk
+		.social__icon
+			width 21px
+			height 12px
+	&__item_youtube
+		.social__icon
+			width 19px
+			height 20px
+	&__item_inst
+		.social__icon
+			width 20px
+			height 20px
+	&__link
+		position relative
+		border 2px solid #02a212
+		display block
+		width 50px
+		height 50px
+		background-color transparent
+		border-radius 50%
+		&:hover
+			.social__icon
+				fill #ffcc1b
+				tr(all .3s ease)
+	&__icon
+		position absolute
+		top 50%
+		left 50%
+		display block
+		transform translate(-50%, -50%)

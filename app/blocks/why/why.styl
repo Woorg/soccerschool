@@ -1,0 +1,86 @@
+.why
+	display block
+	background url('../images/general/why-bg.jpg') 50% 0 no-repeat
+	&__in
+		@extends .in
+		padding-top 60px
+		padding-bottom 60px
+	&__title
+		margin-bottom 10px
+		font-size 42px
+		font-family $pR
+		text-transform uppercase
+		text-align center
+	&__list
+		display flex
+		flex-flow row wrap
+		justify-content space-around
+		align-items flex-start
+	&__item
+		margin-bottom 14px
+		padding-left 30px
+		padding-right 30px
+		width 370px
+		text-align center
+		color #333
+	&__number-w
+		position relative
+		margin auto
+		margin-bottom 8px
+		width 95px
+		height 95px
+		border 1px solid #ffffff
+		background-color transparent
+		border-radius 50%
+		&:after,
+		&:before
+			position absolute
+			z-index 0
+			top 50%
+			left 50%
+			content ""
+			transform translate(-50%, -50%)
+			border-radius 50%
+		&:after
+			width 73px
+			height 73px
+			border 1px solid #ffbb0e
+			background-color #ffffff
+			opacity .6
+	&__number
+		position absolute
+		top 50%
+		left 50%
+		z-index 1
+		margin auto
+		width 49px
+		height 49px
+		background-color #2b66eb
+		background-image linear-gradient(to top, #ffb300 0%, #ffd339 100%)
+		color #FFF
+		font-size 36px
+		font-family $pR
+		text-transform uppercase
+		text-align center
+		border-radius 50%
+		transform translate(-50%, -50%)
+		&:after
+			position absolute
+			z-index 1
+			top 50%
+			left 50%
+			content ""
+			width 114px
+			height 114px
+			border 1px solid #9fccff
+			background-color transparent
+			border-radius 50%
+			opacity .2
+			transform translate(-50%, -50%)
+	&__item-title
+		margin-bottom 10px
+		font-size 28px
+		line-height 1.1
+	&__item-text
+		font-size 19px
+		line-height 1.473

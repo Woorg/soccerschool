@@ -1,0 +1,44 @@
+extends /blocks/layout-default/layout-default
+
+include /blocks/header/header
+include /blocks/standards/standards
+include /blocks/why/why
+include /blocks/advantages/advantages
+include /blocks/trainers/trainers
+include /blocks/how/how
+include /blocks/video/video
+include /blocks/philosophy/philosophy
+include /blocks/choose/choose
+include /blocks/life/life
+include /blocks/news/news
+include /blocks/reviews/reviews
+include /blocks/maps/maps
+include /blocks/partners/partners
+
+
+include /blocks/footer/footer
+
+
+
+block head
+	- var pageTitle = 'детская футбольная школа Academy The Best Footballдетская футбольная школа Academy The Best Football';
+
+block content
+	+header()
+
+	+standards()
+	+why()
+	+advantages()
+	+trainers()
+	+how()
+	+video()
+	+philosophy()
+	+choose()
+	+life()
+	+news()
+	+reviews()
+	+maps()
+	+partners()
+	+how().how_second
+
+	+footer()

@@ -1,0 +1,31 @@
+mixin reviews()
+	section.reviews&attributes(attributes)
+		.reviews__in
+			h2.reviews__title О нас говорят
+
+			.reviews__tabs.tabs
+				.tabs__nav
+					a.tabs__link.tabs__link_active(href='#tab-1') Читать отзывы
+					a.tabs__link(href='#tab-2') Смотреть отзывы
+
+				.tabs__content
+					.tabs__tab.tabs__tab_active#tab-1
+						ul.reviews__list
+							li.reviews__item
+								.reviews__picture(style="background-image:url(assets/images/content/reviews-img-1.jpg')")
+								.reviews__name Игорь Колосов
+								.reviews__city Москва
+								.reviews__text Замечательная школа. Тренера опытные, добрые по отношению к детям, приветливые. Знающие свое дело. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+							li.reviews__item
+								.reviews__picture(style="background-image:url(assets/images/content/reviews-img-2.jpg')")
+								.reviews__name Алина Хрусталева
+								.reviews__city Москва
+								.reviews__text Замечательная школа. Тренера опытные, добрые по отношению к детям, приветливые. Знающие свое дело. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+
+							li.reviews__item
+								.reviews__picture(style="background-image:url(assets/images/content/reviews-img-3.jpg')")
+								.reviews__name Илья Сохов
+								.reviews__city Балашиха
+								.reviews__text Замечательная школа. Тренера опытные, добрые по отношению к детям, приветливые. Знающие свое дело. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.
+
+					.tabs__tab#tab-2 TAB 2

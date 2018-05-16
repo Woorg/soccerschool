@@ -1,0 +1,42 @@
+include ../icon/icon
+
+mixin header()
+	header.header&attributes(attributes)
+		.header__in
+			.header__top
+				.header__social.social
+					.social__title Давайте дружить в соцсетях:
+					ul.social__list
+						li.social__item.social__item_fb
+							a.social__link(href="#link")
+								+icon('fb-icon', true).social__icon
+						li.social__item.social__item_vk
+							a.social__link(href="#link")
+								+icon('vk-icon', true).social__icon
+						li.social__item.social__item_youtube
+							a.social__link(href="#link")
+								+icon('youtube-icon', true).social__icon
+						li.social__item.social__item_inst
+							a.social__link(href="#link")
+								+icon('inst-icon', true).social__icon
+				a.header__logo.logo(href="#")
+					img(src="assets/images/general/logo.png", alt="Academy The Best Football")
+				.header__contacts.contacts
+					.contacts__item.contacts__item_phone
+						+icon('phone-icon', true).contacts__icon
+						a.contacts__link(href="tel:+74952013444") +7 (495) 201-34-44
+					.contacts__item.contacts__item_email
+						+icon('mail-icon', true).contacts__icon
+						a.contacts__link(href="mailto:info@soccerschool.ru") info@soccerschool.ru
+					.contacts__item.contacts__item_address
+						+icon('address-icon', true).contacts__icon
+						a.contacts__link(href="#maps") Адреса наших полей
+					a.contacts__button.button(href="#link") Заказать звонок
+			.header__body
+				h1.header__title детская футбольная школа <strong>Academy The Best Football</strong>
+				.header__text
+					p Завлекающий текст. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+				a.header__scroll(href="#standards")
+
+

@@ -1,0 +1,25 @@
+mixin footer()
+	footer.footer&attributes(attributes)
+		.footer__in
+			.footer__copyright &copy;Academy the Best Football. Детская футбольная школа. 2018.<br/> Все права защищены.
+
+			.footer__contacts.contacts.contacts_second
+				.contacts__item Позвоните нам:
+					a.contacts__link(href="tel:+74952013444") +7 (495) 201-34-44
+				.contacts__item Напишите нам:
+					a.contacts__link(href="mailto:info@soccerschool.ru") info@soccerschool.ru
+
+			.footer__social.social.social_second
+				ul.social__list
+					li.social__item
+						a.social__link(href="#link")
+							+icon('fb-icon', true).social__icon
+					li.social__item
+						a.social__link(href="#link")
+							+icon('vk-icon', true).social__icon
+					li.social__item
+						a.social__link(href="#link")
+							+icon('youtube-icon', true).social__icon
+					li.social__item
+						a.social__link(href="#link")
+							+icon('inst-icon', true).social__icon

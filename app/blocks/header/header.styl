@@ -1,0 +1,130 @@
+.header
+	display block
+	background url('../images/content/hero-img.jpg') 50% 0 no-repeat
+	background-size cover
+	&__in
+		@extends .in
+		padding-top 44px
+	&__top
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
+	// &__social
+
+	// &__logo
+
+	// &__contacts
+
+	&__body
+		position relative
+		padding-top 126px
+		padding-bottom 140px
+		text-align center
+	&__title
+		border 5px solid #12ab0e
+		margin-bottom 54px
+		padding-top 22px
+		padding-bottom 11px
+		max-width 970px
+		min-height 290px
+		display inline-block
+		vertical-align top
+		background-color transparent
+		color #ffffff
+		font-family $pR
+		font-size 50px
+		text-transform uppercase
+		strong
+			display block
+			font-size 90px
+			font-family $pB
+			line-height 1
+			text-transform uppercase
+	&__text
+		margin auto
+		max-width 970px
+		color #fff
+		font-size 26px
+		line-height 1.2
+
+	&__scroll
+		position absolute
+		left 50%
+		bottom -71px
+		retinaSprite($scroll_bg_group)
+		transform translateX(-50%)
+		&:after,
+		&:before
+			position absolute
+			content ""
+		&:after
+			position absolute
+			top 50%
+			left 50%
+			content ""
+			retinaSprite($mouse_icon_group)
+			transform translate(-50%, -50%)
+
+		&:before
+			top -6px
+			left 50%
+			width 1px
+			height 91px
+			background-color #ffffff
+			transform translate(0, -50%)
+
+.logo
+	display block
+	width 282px
+	height 190px
+	img
+		display block
+		max-width 100%
+		height auto
+
+
+
+.contacts
+	color #fff
+	font-family $sR
+	font-size 24px
+	&__item
+		position relative
+		margin-bottom 13px
+		padding-left 34px
+	// &__text
+
+	&__item_phone
+		.contacts__icon
+			width 19px
+			height 27px
+	&__item_email
+		.contacts__icon
+			width 22px
+			height 16px
+	&__item_address
+		.contacts__icon
+			left 2px
+			width 19px
+			height 26px
+		.contacts__link
+			border-bottom 1px dotted #17bb13
+			font-size 23px
+			line-height 1.3
+			color #17bb13
+	&__icon
+		position absolute
+		top 50%
+		left 0
+		transform translateY(-50%)
+	&__text
+		display block
+	&__link
+		display inline-block
+		vertical-align top
+		color #fff
+		text-decoration none
+		tr(all .3s ease)
+		&:hover
+			border-bottom none

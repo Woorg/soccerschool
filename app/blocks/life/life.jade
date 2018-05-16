@@ -1,0 +1,40 @@
+mixin life()
+	section.life&attributes(attributes)
+		.life__in
+			h2.life__title Жизнь школы
+
+			.life__tabs.tabs
+				.tabs__nav
+					a.tabs__link.tabs__link_active(href='#tab-1') Турниры
+					a.tabs__link(href='#tab-2') Мероприятия
+
+				.tabs__content
+					.tabs__tab.tabs__tab_active#tab-1
+						ul.life__list
+							li.life__item
+								a.life__link(href="#link")
+									.life__image
+										img(src="assets/images/content/tourney-img-1.jpg", alt="")
+								.life__item-title Турнир «Золотые ключи»
+								.life__item-date Май 2017
+							li.life__item
+								a.life__link(href="#link")
+									.life__image
+										img(src="assets/images/content/tourney-img-2.jpg", alt="")
+								.life__item-title Турнир «Точный пасс»
+								.life__item-date Май 2017
+							li.life__item
+								a.life__link(href="#link")
+									.life__image
+										img(src="assets/images/content/tourney-img-3.jpg", alt="")
+								.life__item-title Турнир «Золотые ключи»
+								.life__item-date Май 2017
+							li.life__item
+								a.life__link(href="#link")
+									.life__image
+										img(src="assets/images/content/tourney-img-4.jpg", alt="")
+								.life__item-title Турнир «Точный пасс»
+								.life__item-date Май 2017
+
+					.tabs__tab#tab-2 TAB 2
+
