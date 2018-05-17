@@ -1,2 +1,155 @@
 .trainers
 	display block
+	background #fafafa
+	&__in
+		@extends .in
+		padding-top 90px
+		padding-bottom 66px
+	&__title
+		@extends .title
+		margin-bottom 59px
+		text-align center
+
+	// &__slider
+
+	&__item
+		padding-top 50px
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
+		clr()
+	&__image
+		float left
+		width 485px
+		width ratio-percentage(485, 1170)
+		min-height 595px
+		background url('../images/general/trainer-image-frame.png') 0 0 no-repeat
+		img
+			padding-top 50px
+			padding-left 72px
+			padding-right 56px
+			display block
+			max-width 100%
+			height auto
+
+	&__content
+		padding-top 22px
+		float right
+		// width 700px
+		width 685px
+		width ratio-percentage(682, 1170)
+	&__name
+		position relative
+		margin-bottom 0
+		padding-left 76px
+		font-size 42px
+		font-family $pR
+		text-transform uppercase
+	&__icon
+		position absolute
+		top 0
+		left 0
+		width 60px
+		height 60px
+		background-color #ffb300
+		background-image linear-gradient(to top, #ffb300 0%, #ffd339 100%)
+		border-radius 50%
+		&:after
+			position absolute
+			top 50%
+			left 50%
+			content ''
+			retinaSprite($trainer_icon_group)
+			transform translate(-50%, -50%)
+
+	&__position
+		margin-bottom 28px
+		padding-left 76px
+		font-size 28px
+	&__text
+		margin-bottom 42px
+	// &__progress
+	&__progress-title
+		margin-bottom 20px
+		font-size 24px
+		font-family $sB
+	// &__list
+
+	&__list-item
+		position relative
+		margin-bottom 15px
+		padding-left 30px
+		&:after
+			position absolute
+			top 0
+			left 0
+			width 24px
+			height 24px
+			content ''
+			background url('../images/general/check-icon.svg') 0 0 no-repeat
+
+
+	.slick-dots
+		li
+			margin 0 6px
+			width 16px
+			height 16px
+		button
+			padding 0
+			width 16px
+			height 16px
+			// width 7px
+			// height 7px
+			border-radius 50%
+			background transparent
+			&:before
+				top 50%
+				left 50%
+				width 8px
+				height 8px
+				background-color #12ab0e
+				opacity 1
+				border-radius 50%
+				font-size 0
+				line-height 1
+				transform translate(-50%, -50%)
+	.slick-active
+		button
+			width 16px
+			height 16px
+			background-color #333333
+			border-radius 50%
+			&:before
+				background-color #333333
+
+
+	.slick-arrow
+		position absolute
+		width 50px
+		height 50px
+		border 1px solid #12ab0e
+		background-color transparent
+		border-radius 50%
+		&:before
+			position absolute
+			top 50%
+			left 50%
+			width 8px
+			height 16px
+			content ''
+			background url('../images/general/right-arrow.svg') 0 0 no-repeat
+			opacity 1
+			transform translate(calc(-50% + 1px), calc(-50% + 2px))
+	.slick-prev
+		left -55px
+		&:before
+			transform translate(calc(-50% + 0px), calc(-50% + 1px)) rotate(-180deg)
+	// 		top 50%
+	// 		left 50%
+	.slick-next
+		right -55px
+	// 	&:before
+	// 		top 50%
+	// 		left 50%
+

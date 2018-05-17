@@ -1,2 +1,63 @@
 .advantages
 	display block
+	background url('../images/general/advantages-bg.jpg') 50% 0 no-repeat
+	&__in
+		@extends .in
+		padding-top 80px
+	&__title
+		@extends .title
+		margin-bottom 50px
+		color #FFF
+		text-align center
+		&:after
+			left calc(50% - 28px)
+			background-color #ffbd1b
+	&__list
+		display flex
+		flex-flow row wrap
+		justify-content center
+		align-items flex-start
+	&__item
+		position relative
+		margin-right 30px
+		margin-bottom 32px
+		padding-left 30px
+		padding-right 30px
+		width 370px
+		color #fff
+		text-align center
+		&:nth-child(3n)
+			margin-right 0
+	&__item_1,
+	&__item_2,
+	&__item_3
+		.advantages__icon
+			&:after
+				position absolute
+				top 50%
+				right calc(-100% - 50px )
+				content ""
+				width 140px
+				height 1px
+				background-color #ffffff
+				opacity .8
+	&__icon
+		position relative
+		border 10px solid #ffbd1b
+		margin auto
+		margin-bottom 20px
+		width 160px
+		height 160px
+		background-color rgba(0, 112, 5, .7)
+		border-radius 50%
+		img
+			position absolute
+			top 50%
+			left 50%
+			display block
+			max-width 100%
+			height auto
+			transform translate(-50%, -50%)
+	&__text
+		font-size 24px
+		line-height 1.25

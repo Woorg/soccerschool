@@ -1,2 +1,59 @@
 .video
 	display block
+	&__in
+		@extends .in
+		padding-top 114px
+		padding-bottom 40px
+	&__text
+		margin-bottom 63px
+		line-height 1.578
+		text-align center
+	&__object
+		position relative
+		margin auto
+		width 770px
+		width ratio-percentage(770, 1170)
+		min-height 432px
+		background #333 url('../images/content/video-bg.jpg') 0 0 no-repeat
+		background-size cover
+		box-shadow 0 0 54px rgba(0, 0, 0, 0.1)
+		&:after
+			position absolute
+			top 0
+			left 0
+			right 0
+			bottom 0
+			content ''
+			background rgba(51, 51, 51, .7)
+	&__button
+		position absolute
+		z-index 1
+		top 50%
+		left 50%
+		text-align center
+		transform translate(-50%, -50%)
+		cursor pointer
+		&:hover
+			.video__button-icon
+				opacity .8
+				tr(opacity .3s ease)
+	&__button-icon
+		position relative
+		margin auto
+		margin-bottom 10px
+		retinaSprite($video_button_group)
+		opacity 1
+		tr(opacity .3s ease)
+	&__button-triangle
+		position absolute
+		top 50%
+		left 50%
+		width 26px
+		height 30px
+		transform translate(calc(-50% + 2px), -50%)
+
+	&__button-text
+		color #FFF
+		font-size 30px
+		font-family $pR
+		text-transform uppercase

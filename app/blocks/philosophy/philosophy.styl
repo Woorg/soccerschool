@@ -1,2 +1,28 @@
 .philosophy
 	display block
+	&__in
+		@extends .in
+		padding-top 40px
+		padding-bottom 122px
+	&__w
+		position relative
+		margin auto
+		padding-top 40px
+		padding-right 100px
+		padding-bottom 60px
+		padding-left 100px
+		width 970px
+		width ratio-percentage(970, 1170)
+		height 254px
+		background url('../images/general/philosophy-frame.png') 0 0 no-repeat
+		background-size cover
+		text-align center
+	&__icon
+		margin auto
+		margin-bottom 17px
+		retinaSprite($philosophy_icon_group)
+	&__text
+		font-family $pR
+		font-size 30px
+		line-height 1.4
+		text-transform uppercase

@@ -6,17 +6,17 @@ body
 .page
 	min-height 100%
 	background #fff
-	color #000
+	color #333
 	font-family $sR
-	font-size 14px
+	font-size 19px
 	font-weight normal
-	line-height 1.428
+	line-height 1.473
 
 .in
 	margin auto
 	padding-left 15px
 	padding-right 15px
-	max-width 1170px
+	max-width 1200px
 	+r($m)
 		padding-left 10px
 		padding-right 10px
@@ -40,13 +40,14 @@ body
 
 .button
 	padding-top 8px
-	padding-bottom 16px
+	padding-left 40px
+	padding-right 40px
+	padding-bottom 8px
 	display inline-block
 	vertical-align top
-	width 260px
-	height 50px
-	background #31bc06
-	background-image linear-gradient(to top, #00a113 0%, #31bc06 100%)
+	min-height 50px
+	// background #31bc06
+	background linear-gradient(to top, #00a113 0%, #31bc06 100%)
 	color #FFF
 	font-family $pM
 	font-size 24px
@@ -55,11 +56,11 @@ body
 	text-decoration none
 	box-shadow 0 3px 4px rgba(0, 0, 0, .29)
 	opacity 1
-	tr(all .3s ease)
+	tr(background .3s ease)
 	&:hover
-		opacity 0.9
-		background-image linear-gradient(to top, darken(#00a113, 10) 0%, darken(#31bc06, 10) 100%)
-		tr(all .3s ease)
+		opacity .9
+		background linear-gradient(to top, darken(#00a113, 10) 0%, darken(#31bc06, 10) 100%)
+		tr(background .3s ease)
 
 .wysiwyg
 	font-family $sR

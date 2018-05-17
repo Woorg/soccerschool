@@ -1,2 +1,47 @@
 .choose
 	display block
+	background url('../images/general/choose-bg.jpg') 50% 0 no-repeat
+	background-size cover
+	&__in
+		@extends .in
+		padding-top 88px
+		padding-bottom 78px
+		color #fff
+		text-align center
+	&__title
+		@extends .title
+		margin-bottom 20px
+		color #fff
+		&:after
+			left calc(50% - 30px)
+			background-color #ffbd1b
+	&__list
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
+	&__item
+		margin-bottom 42px
+		width 370px
+		width ratio-percentage(370, 1170)
+	&__image
+		margin auto
+		margin-bottom 20px
+		width 370px
+		img
+			display block
+			max-width 100%
+			height auto
+
+	&__item-title
+		margin-bottom 20px
+		font-size 42px
+		font-family $pM
+		line-height 1.0476
+		text-transform uppercase
+	&__text
+		font-size 24px
+		line-height 1.25
+	// &__button
+
+
