@@ -4,28 +4,44 @@
 	background-size cover
 	&__in
 		@extends .in
-		padding-top 44px
+		padding-top 30px
 	&__top
 		display flex
 		flex-flow row wrap
 		justify-content space-between
 		align-items flex-start
-	// &__social
-
-	// &__logo
-
-	// &__contacts
+		+r($tM)
+			display block
+			justify-content center
+	&__logo
+		position relative
+		left -17px
+		+r($tM)
+			margin auto
+			left 0
+	&__social
+		+r($tM)
+			margin auto
+			margin-bottom 20px
+			text-align center
+	&__contacts
+		+r($tM)
+			margin auto
 
 	&__body
 		position relative
-		padding-top 126px
+		padding-top 118px
+		// padding-bottom 118px
 		padding-bottom 140px
 		text-align center
+		+r($tM)
+			padding-top (118px / 2)
+			padding-bottom (140px / 2)
 	&__title
 		border 5px solid #12ab0e
-		margin-bottom 54px
-		padding-top 22px
-		padding-bottom 11px
+		margin-bottom 50px
+		padding-top 16px
+		padding-bottom 20px
 		max-width 970px
 		min-height 290px
 		display inline-block
@@ -34,30 +50,46 @@
 		color #ffffff
 		font-family $pR
 		font-size 50px
+		line-height 1.9
 		text-transform uppercase
+		+r($tM)
+			margin-bottom (50px/2)
+			padding-left 10px
+			padding-right 10px
+			min-height auto
+			font-size (50px/2)
 		strong
 			display block
 			font-size 90px
 			font-family $pB
 			line-height 1
 			text-transform uppercase
+			+r($tM)
+				font-size (90px/2)
 	&__text
 		margin auto
-		max-width 970px
+		max-width 980px
 		color #fff
 		font-size 26px
 		line-height 1.2
-
+		+r($tM)
+			padding-left 50px
+			padding-right 50px
+			font-size (26px/1.6)
 	&__scroll
 		position absolute
 		left 50%
-		bottom -71px
+		bottom -72px
 		retinaSprite($scroll_bg_group)
 		transform translateX(-50%)
+		+r($tM)
+			display none
 		&:after,
 		&:before
 			position absolute
 			content ""
+			+r($tM)
+				display none
 		&:after
 			position absolute
 			top 50%
@@ -67,13 +99,12 @@
 			transform translate(-50%, -50%)
 
 		&:before
-			top -6px
-			left 50%
+			top 0
+			left calc(50% - 1px)
 			width 1px
-			height 91px
+			height 80px
 			background-color #ffffff
 			transform translate(0, -50%)
-
 .logo
 	display block
 	width 282px
@@ -82,19 +113,16 @@
 		display block
 		max-width 100%
 		height auto
-
-
-
 .contacts
+	padding-top 13px
+	width 262px
 	color #fff
 	font-family $sR
 	font-size 24px
 	&__item
 		position relative
-		margin-bottom 13px
-		padding-left 34px
-	// &__text
-
+		margin-bottom 0
+		padding-left 32px
 	&__item_phone
 		.contacts__icon
 			width 19px
@@ -108,6 +136,7 @@
 			left 2px
 			width 19px
 			height 26px
+			stroke #Fff
 		.contacts__link
 			border-bottom 1px dotted #17bb13
 			font-size 23px
@@ -128,3 +157,17 @@
 		tr(all .3s ease)
 		&:hover
 			border-bottom none
+	&__button
+		margin-top 14px
+
+.contacts_second
+	padding-top 0
+	width 290px
+	font-size 16px
+	+r($tM)
+		font-size (16px/1.3)
+	.contacts__item
+		margin-bottom 0
+		padding-left 0
+	.contacts__link
+		display inline

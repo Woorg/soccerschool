@@ -5,15 +5,33 @@
 		@extends .in
 		padding-top 22px
 		padding-bottom 18px
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
 		color #FFF
 		font-size 16px
+		+r($tM)
+			display block
+			font-size (16px/1.4)
 	&__copyright
-		width 400px
-
+		width 412px
+		+r($tM)
+			margin auto
+			margin-bottom 10px
+			width 300px
+			text-align center
 	&__contacts
-		padding-left 35px
+		padding-left 0
 		width 300px
-	// &__social
+		+r($tM)
+			margin auto
+			margin-bottom 20px
+			text-align center
+	&__social
+		width 270px
+		+r($tM)
+			margin auto
 
 
 

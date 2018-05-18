@@ -1,17 +1,26 @@
 .standards
 	display block
+	overflow hidden
 	&__in
 		@extends .in
-		padding-top 140px
+		padding-top 130px
 		padding-bottom 80px
+		+r($tM)
+			padding-top (130px/2)
+			padding-bottom (80px/2)
 	&__title
 		@extends .title
-		margin-bottom 42px
+		margin-bottom 34px
 		text-align center
+		+r($tM)
+			margin-bottom (34px/2)
 	&__text
 		margin auto
-		max-width 960px
+		max-width 970px
 		font-size 19px
 		line-height 1.579
 		text-align center
+		+r($tM)
+			font-size (19px/1.2)
+
 

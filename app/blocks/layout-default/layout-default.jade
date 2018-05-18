@@ -8,4 +8,62 @@ html(lang='ru')
 	include ../head/head
 	+page
 		block content
-		+scripts(['app.min.js'])
+		+scripts(['jquery-3.3.1.min.js', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCWvsMQjEMAx7tT2jnMykNF7_gAUpS3-g4', 'maplace.min.js', 'app.min.js'])
+
+		script.
+			$(function() {
+				var map;
+				var targets = [
+					{
+						lat: 55.712825,
+						lon: 37.458719,
+						title: 'г. Москва, ул. Кременчугская, д.42 к.1',
+						html: 'г. Москва, ул. Кременчугская, д.42 к.1',
+						zoom: 17,
+						animation: google.maps.Animation.DROP
+					},
+					{
+						lat: 55.650458,
+						lon: 37.577790,
+						title: 'Херсонская ул., 2',
+						html: 'г. Москва, ул. Кременчугская, д.40',
+						zoom: 17,
+						animation:google.maps.Animation.DROP
+					},
+					{
+						lat: 55.660400,
+						lon: 37.587535,
+						title: 'Болотниковский',
+						html: 'Болотниковский',
+						zoom: 17,
+						animation:google.maps.Animation.DROP
+					}
+				];
+				 var styles = [
+					{
+						featureType: "all",
+						elementType: "all",
+						stylers: [
+							{
+								saturation: -100
+							}
+						]
+					}
+				];
+				map = new Maplace({
+					locations: targets,
+					map_div: '#gmap',
+					generate_controls: false,
+					start: 1,
+					show_markers: true,
+					map_options: {
+						scrollwheel: false,
+						styles: styles
+					}
+				}).Load();
+				$(".maps__item .maps__link").on('click', function (e) {
+					e.preventDefault();
+					var loc = $(this).data('loc');
+					map.ViewOnMap(loc);
+				});
+			});

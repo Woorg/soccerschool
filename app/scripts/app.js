@@ -49,19 +49,19 @@ import WOW from 'wowjs/dist/wow';
 
 		}
 
-		// Graduates carousel
+		// Reviews carousel
 
-		let $gradCarousel = $('.graduates__carousel');
+		let $reviewsCarousel = $('.reviews__list');
 
-		if ($gradCarousel.length) {
+		if ($reviewsCarousel.length) {
 
-			$gradCarousel.slick({
+			$reviewsCarousel.slick({
 				loop: true,
 				infinite: true,
 				speed: 900,
-				slidesToShow: 7,
+				slidesToShow: 3,
 				slidesToScroll: 1,
-				dots: false,
+				dots: true,
 				centerMode: true,
 				centerPadding: '28px',
 				focusOnSelect: true,
@@ -74,7 +74,7 @@ import WOW from 'wowjs/dist/wow';
 							arrows: true,
 							centerMode: true,
 							centerPadding: '0',
-							slidesToShow: 7
+							slidesToShow: 1
 						}
 					},
 					{
@@ -83,7 +83,7 @@ import WOW from 'wowjs/dist/wow';
 							arrows: true,
 							centerMode: true,
 							centerPadding: '0',
-							slidesToShow: 5
+							slidesToShow: 1
 						}
 					},
 					{
@@ -98,7 +98,7 @@ import WOW from 'wowjs/dist/wow';
 					{
 						breakpoint: 426,
 						settings: {
-							arrows: true,
+							arrows: false,
 							centerMode: true,
 							centerPadding: '0',
 							slidesToShow: 1
@@ -109,45 +109,73 @@ import WOW from 'wowjs/dist/wow';
 
 		}
 
+		/*
+		 Tabs gallery
+		*/
 
-		// Tabs
-
-		var tabsNavLink = $('.tabs__item');
-		var tabsNavLinkActive = 'tabs__item_active';
-		var tab = $('.tabs__tab');
-		var tabActive = 'tabs__tab_active';
+		var tabsNavLink = $('.life__tabs-link');
+		var tabsNavLinkActive = 'life__tabs-link_active';
+		var tab = $('.life__tab');
+		var tabActive = 'life__tab_active';
 
 		tabsNavLink.click(function (event) {
 			event.preventDefault();
 			$(this).addClass(tabsNavLinkActive);
 			$(this).siblings().removeClass(tabsNavLinkActive);
-			var tabCurrent = $(this).children().attr('href');
+			var tabCurrent = $(this).attr('href');
 			tab.not(tabCurrent).removeClass(tabActive).hide();
 			$(tabCurrent).fadeIn(50).addClass(tabActive).show();
-			if ($('.tabs__tab_active .team__item').length < 3) {
-				console.log('true');
-				$('.tabs__tab_active .team__list').addClass('team__list_quanted-low');
+		});
+
+		/*
+		 Tabs reviews
+		*/
+
+		var tabsNavLinkSecond = $('.reviews__tabs-link');
+		var tabsNavLinkActiveSecond = 'reviews__tabs-link_active';
+		var tabSecond = $('.reviews__tab');
+		var tabActiveSecond = 'reviews__tab_active';
+
+		tabsNavLinkSecond.click(function (event) {
+			event.preventDefault();
+			$(this).addClass(tabsNavLinkActiveSecond);
+			$(this).siblings().removeClass(tabsNavLinkActiveSecond);
+			var tabCurrentSecond = $(this).attr('href');
+			tabSecond.not(tabCurrentSecond).removeClass(tabActiveSecond).hide();
+			$(tabCurrentSecond).fadeIn(50).addClass(tabActiveSecond).show();
+		});
+
+
+		/*
+		 Video
+		*/
+
+
+		$('.popup-video').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+			fixedContentPos: false
+		});
+
+
+		$('.maps__item').on('click', function (e) {
+			e.preventDefault();
+			$('.maps__item').siblings().removeClass('maps__item_active');
+			$(this).toggleClass('maps__item_active');
+		})
+
+		/*
+		 Scroll to element
+		*/
+
+		$('.contacts__item_address .contacts__link, .header__scroll').on('click', function(e) {
+			var _scroll = $(this).attr('href');
+			if (_scroll != '#' && $(_scroll).length) {
+				$('html, body').animate({ scrollTop: $(_scroll).offset().top  }, 800);
 			}
-		});
-
-		function setSlideCount() {
-			let $el = $('.teachers__count').find('.teachers__total');
-			$el.text(slideCount);
-		}
-
-		function setCurrentSlideNumber(currentSlide) {
-			let $el = $('.teachers__count').find('.teachers__curr');
-			$el.text(currentSlide + 1);
-		}
-
-		$slider.on('init', function(event, slick){
-			slideCount = slick.slideCount;
-			setSlideCount();
-			setCurrentSlideNumber(slick.currentSlide);
-		});
-
-		$slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
-			setCurrentSlideNumber(nextSlide);
 		});
 
 
@@ -211,7 +239,10 @@ import WOW from 'wowjs/dist/wow';
 		});
 
 
-
 	});
 
 })(jQuery);
+
+
+
+

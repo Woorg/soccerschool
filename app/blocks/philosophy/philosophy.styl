@@ -2,27 +2,58 @@
 	display block
 	&__in
 		@extends .in
-		padding-top 40px
-		padding-bottom 122px
+		padding-top 46px
+		padding-bottom 137px
+		+r($tM)
+			padding-bottom (137px/2)
+			display none
+		+r($t)
+			padding-top 0
+			padding-bottom (137px/3)
 	&__w
 		position relative
 		margin auto
-		padding-top 40px
+		padding-top 44px
 		padding-right 100px
 		padding-bottom 60px
 		padding-left 100px
 		width 970px
 		width ratio-percentage(970, 1170)
 		height 254px
-		background url('../images/general/philosophy-frame.png') 0 0 no-repeat
-		background-size cover
+		background url('../images/general/philosophy-frame.png') 50% 0 no-repeat
+		background-size 100%
 		text-align center
+		+r($tM)
+			padding-top (44px/2)
+			padding-right (100px/2)
+			padding-left (100px/2)
+			width auto
+			height auto
+		+r($t)
+			padding-left 0
+			padding-right 0
+			display none
+			min-height 227px
 	&__icon
 		margin auto
-		margin-bottom 17px
+		margin-bottom 13px
 		retinaSprite($philosophy_icon_group)
+		+r($t)
+			width (82px/2)
+			height (60px/2)
+			background url('../images/general/philosophy-icon.png') 0 0 no-repeat
+			background-size cover
 	&__text
 		font-family $pR
 		font-size 30px
 		line-height 1.4
 		text-transform uppercase
+		+r($tM)
+			font-size (30px/1.4)
+		+r($t)
+			position absolute
+			top 50%
+			left 50%
+			font-size (30px/1.6)
+			transform translate(-50%, -50%)
+

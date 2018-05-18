@@ -1,2 +1,133 @@
 .reviews
 	display block
+	&__in
+		@extends .in
+		padding-top 90px
+		padding-bottom 78px
+		+r($tM)
+			padding-top (90px/2)
+			padding-bottom (78px/2)
+
+	&__title
+		@extends .title
+		margin-bottom 57px
+		text-align center
+		+r($tM)
+			margin-bottom (57px/2)
+	&__tabs-nav
+		margin-bottom 80px
+		text-align center
+		+r($tM)
+			margin-bottom (80px/2)
+	&__list
+		display flex
+		flex-flow row wrap
+		justify-content space-between
+		align-items flex-start
+	&__item
+		width 370px
+		width ratio-percentage(390, 1170)
+		text-align center
+	&__picture
+		margin auto
+		margin-bottom 10px
+		width 80px
+		height 80px
+		border-radius 50%
+		box-shadow 0 5px 13px rgba(0, 0, 0, 0.18)
+	&__name
+		font-size 28px
+		line-height 1.4
+	&__city
+		margin-bottom 15px
+		color #9b9b9b
+		font-size 18px
+	&__text
+		position relative
+		padding-top 40px
+		padding-right 30px
+		padding-bottom 50px
+		padding-left 30px
+		line-height 1.578
+		&:after
+			position absolute
+			top 0
+			left 50%
+			content ''
+			retinaSprite($quotes_icon_group)
+			transform translateX(-50%)
+	.slick-dots
+		bottom -10px
+		li
+			margin 0 6px
+			width 16px
+			height 16px
+		button
+			padding 0
+			width 16px
+			height 16px
+			border-radius 50%
+			background transparent
+			&:before
+				top 50%
+				left 50%
+				width 8px
+				height 8px
+				background-color #12ab0e
+				opacity 1
+				border-radius 50%
+				font-size 0
+				line-height 1
+				transform translate(-50%, -50%)
+	.slick-active
+		button
+			width 16px
+			height 16px
+			background-color #333333
+			border-radius 50%
+			&:before
+				background-color #333333
+				opacity 1
+
+
+	.slick-arrow
+		position absolute
+		z-index 1
+		width 50px
+		height 50px
+		border 1px solid #12ab0e
+		background-color transparent
+		border-radius 50%
+		opacity 1
+		tr(all .3s ease)
+		&:before
+			position absolute
+			top 50%
+			left 50%
+			width 8px
+			height 16px
+			content ''
+			background url('../images/general/right-arrow.svg') 0 0 no-repeat
+			opacity 1
+			transform translate(calc(-50% + 1px), calc(-50% + 2px))
+		&:hover,
+		&:focus
+			background-image linear-gradient(to top, #00a113 0%, #31bc06 100%)
+			box-shadow 0 3px 4px rgba(0, 0, 0, 0.29)
+			tr(all .3s ease)
+			&:before
+				background url('../images/general/right-arrow-second.svg') 0 0 no-repeat
+
+
+	.slick-prev
+		left -55px
+		+r($tM)
+			left 0
+		&:before
+			transform translate(calc(-50% + 0px), calc(-50% + 1px)) rotate(-180deg)
+	.slick-next
+		right -55px
+		+r($tM)
+			right 0
+
+

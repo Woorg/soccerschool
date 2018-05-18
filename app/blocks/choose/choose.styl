@@ -8,40 +8,54 @@
 		padding-bottom 78px
 		color #fff
 		text-align center
+		+r($tM)
+			padding-top (88px/2)
+			padding-bottom (78px/2)
 	&__title
 		@extends .title
 		margin-bottom 20px
 		color #fff
 		&:after
-			left calc(50% - 30px)
 			background-color #ffbd1b
 	&__list
 		display flex
 		flex-flow row wrap
 		justify-content space-between
 		align-items flex-start
+		+r($tM)
+			justify-content center
 	&__item
 		margin-bottom 42px
 		width 370px
 		width ratio-percentage(370, 1170)
+		+r($tM)
+			width auto
 	&__image
 		margin auto
-		margin-bottom 20px
+		margin-bottom 25px
 		width 370px
+		+r($tM)
+			max-width 300px
+			// width 300px
 		img
 			display block
 			max-width 100%
 			height auto
-
 	&__item-title
-		margin-bottom 20px
+		margin-bottom 12px
 		font-size 42px
 		font-family $pM
 		line-height 1.0476
 		text-transform uppercase
+		+r($tM)
+			font-size (42px/1.4)
 	&__text
 		font-size 24px
 		line-height 1.25
-	// &__button
+		+r($tM)
+			font-size (24px/1.4)
 
+	&__button
+		padding-left 20px
+		padding-right 20px
 

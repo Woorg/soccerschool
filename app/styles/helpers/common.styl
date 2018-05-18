@@ -1,4 +1,3 @@
-
 html,
 body
 	height 100%
@@ -7,6 +6,7 @@ body
 	min-height 100%
 	background #fff
 	color #333
+	font-display swap
 	font-family $sR
 	font-size 19px
 	font-weight normal
@@ -23,12 +23,14 @@ body
 
 .title
 	position relative
-	padding-bottom 28px
+	padding-bottom 27px
 	color #333333
 	font-family $pM
 	font-size 54px
 	line-height 1.185
 	text-transform uppercase
+	+r($tM)
+		font-size (54px/2)
 	&:after
 		position absolute
 		left 50%
@@ -37,6 +39,7 @@ body
 		width 60px
 		height 3px
 		background-color #12ab0e
+		transform translateX(-50%)
 
 .button
 	padding-top 8px
@@ -46,7 +49,6 @@ body
 	display inline-block
 	vertical-align top
 	min-height 50px
-	// background #31bc06
 	background linear-gradient(to top, #00a113 0%, #31bc06 100%)
 	color #FFF
 	font-family $pM
@@ -62,6 +64,11 @@ body
 		background linear-gradient(to top, darken(#00a113, 10) 0%, darken(#31bc06, 10) 100%)
 		tr(background .3s ease)
 
+	&.button_big
+		font-size 28px
+		+r($tM)
+			padding-top 12px
+			font-size (28px/1.4)
 .wysiwyg
 	font-family $sR
 	font-weight normal
@@ -94,7 +101,6 @@ body
 	p
 		margin-bottom 10px
 		font-family $sR
-		// font-weight 200
 		line-height 1.4
 		text-align left
 		color #212121

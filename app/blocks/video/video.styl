@@ -2,12 +2,19 @@
 	display block
 	&__in
 		@extends .in
-		padding-top 114px
+		padding-top 106px
 		padding-bottom 40px
+		+r($tM)
+			padding-top (106px/2)
 	&__text
+		margin auto
 		margin-bottom 63px
+		max-width 970px
 		line-height 1.578
 		text-align center
+		+r($tM)
+			margin-bottom (63px/2)
+			font-size (19px/1.4)
 	&__object
 		position relative
 		margin auto
@@ -17,6 +24,10 @@
 		background #333 url('../images/content/video-bg.jpg') 0 0 no-repeat
 		background-size cover
 		box-shadow 0 0 54px rgba(0, 0, 0, 0.1)
+		+r($tM)
+			width auto
+		+r($t)
+			min-height (432px/1.4)
 		&:after
 			position absolute
 			top 0
@@ -31,8 +42,10 @@
 		top 50%
 		left 50%
 		text-align center
-		transform translate(-50%, -50%)
+		transform translate(-50%, calc(-50% + 24px))
+		color #fff
 		cursor pointer
+		text-decoration none
 		&:hover
 			.video__button-icon
 				opacity .8
@@ -51,9 +64,11 @@
 		width 26px
 		height 30px
 		transform translate(calc(-50% + 2px), -50%)
-
 	&__button-text
 		color #FFF
 		font-size 30px
 		font-family $pR
 		text-transform uppercase
+		+r($t)
+			font-size (30px/1.4)
+

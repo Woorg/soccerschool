@@ -1,0 +1,93 @@
+.tabs
+	&__nav
+		font-size 0
+		clr()
+	&__link,
+	.life__tabs-link,
+	.reviews__tabs-link
+		position relative
+		border 1px solid transparent
+		margin-left -1px
+		margin-right -1px
+		padding-top 8px
+		padding-left 33px
+		padding-right 33px
+		padding-bottom 9px
+		min-width 190px
+		min-height 50px
+		display inline-block
+		vertical-align top
+		background linear-gradient(to top, #ffb300 0%, #ffd339 100%)
+		font-size 20px
+		color #000
+		text-align center
+		text-decoration none
+		&:hover
+			text-decoration none
+		&:nth-child(1)
+			border-width 1px 0 1px 1px
+		&:nth-child(2)
+			border-width 1px 1px 1px 0px
+	&__link_active,
+	.life__tabs-link_active,
+	.reviews__tabs-link_active
+		border 1px solid #12ab0e
+		background #ffffff
+		text-decoration none
+		&:after,
+		&:before
+			position absolute
+			left 50%
+			bottom -8px
+			content ""
+		&:after
+			z-index 0
+			left 50%
+			bottom -8px
+			width 0
+			height 0
+			border-style solid
+			border-width 8px 8px 0 8px
+			border-color #13ab0e transparent transparent transparent
+			transform translate(-50%, 0)
+		&:before
+			z-index 1
+			left 50%
+			bottom -6px
+			width 0
+			height 0
+			border-style solid
+			border-width 6px 7px 0 7px
+			border-color #fff transparent transparent transparent
+			transform translate(-50%, 0)
+	&__content
+		position relative
+	&__tab,
+	.life__tab,
+	.reviews__tab
+		height 0
+		visibility hidden
+
+	&__tab_active,
+	.life__tab_active,
+	.reviews__tab_active
+		height auto
+		visibility visible
+
+
+.life
+	.life__tabs-link
+		+r($t)
+			padding-top 12px
+			padding-left 15px
+			padding-right 15px
+			min-width auto
+			font-size (20px/1.2)
+.reviews
+	.reviews__tabs-link
+		padding-left 10px
+		padding-right 10px
+		+r($t)
+			padding-top 12px
+			min-width auto
+			font-size (20px/1.2)

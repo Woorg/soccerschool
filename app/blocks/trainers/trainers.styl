@@ -1,17 +1,22 @@
 .trainers
 	display block
 	background #fafafa
+	overflow hidden
 	&__in
 		@extends .in
 		padding-top 90px
-		padding-bottom 66px
+		padding-bottom 15px
+		+r($tM)
+			padding-top (90px/2)
 	&__title
 		@extends .title
 		margin-bottom 59px
+		line-height 1.3
 		text-align center
-
-	// &__slider
-
+		+r($tM)
+			margin-bottom (59px/2)
+	&__slider
+		margin-top -92px
 	&__item
 		padding-top 50px
 		display flex
@@ -20,32 +25,72 @@
 		align-items flex-start
 		clr()
 	&__image
+		position relative
+		z-index 2
+		margin-left -16px
 		float left
-		width 485px
-		width ratio-percentage(485, 1170)
+		width 470px
 		min-height 595px
-		background url('../images/general/trainer-image-frame.png') 0 0 no-repeat
+		background url('../images/general/trainer-frame-img.png') 0 0 no-repeat
+		background-size cover
+		+r($d)
+			margin auto
+			float none
+			min-height 591px
+		+r($t)
+			margin-bottom 20px
+			width 300px
+			min-height auto
+			background transparent
+
+	&__image-w
+		margin-top 46px
+		margin-left 68px
+		margin-right 39px
+		margin-bottom 50px
+		+r($t)
+			margin-top 0
+			margin-left 0
+			margin-right 0
+			margin-bottom 0
+
 		img
-			padding-top 50px
-			padding-left 72px
-			padding-right 56px
+			border 10px solid #Fff
 			display block
 			max-width 100%
 			height auto
+			background #fff
 
 	&__content
-		padding-top 22px
+		padding-top 36px
 		float right
-		// width 700px
-		width 685px
-		width ratio-percentage(682, 1170)
+		width 700px
+		width ratio-percentage(700, 1170)
+		+r($d)
+			margin auto
+			padding-top 0
+			float none
+			text-align center
+		+r($tM)
+			margin-top -30px
+			text-align left
+		+r($t)
+			margin-top 0
+			width auto
 	&__name
 		position relative
 		margin-bottom 0
-		padding-left 76px
+		padding-left 73px
 		font-size 42px
 		font-family $pR
 		text-transform uppercase
+		+r($d)
+			display inline-block
+			vertical-align top
+		+r($t)
+			padding-left (73px/1.8)
+			font-size (42px/1.4)
+
 	&__icon
 		position absolute
 		top 0
@@ -55,6 +100,11 @@
 		background-color #ffb300
 		background-image linear-gradient(to top, #ffb300 0%, #ffd339 100%)
 		border-radius 50%
+		+r($t)
+			width (60px/2)
+			height (60px/2)
+			top 50%
+			transform translateY(-50%)
 		&:after
 			position absolute
 			top 50%
@@ -62,24 +112,51 @@
 			content ''
 			retinaSprite($trainer_icon_group)
 			transform translate(-50%, -50%)
+			+r($t)
+				width (42px/2)
+				height (28px/2)
+				background url('../images/general/trainer-icon.png') 0 0 no-repeat
+				background-size cover
+
 
 	&__position
+		margin-top -5px
 		margin-bottom 28px
-		padding-left 76px
+		padding-left 71px
 		font-size 28px
+		+r($d)
+			padding-left 8px
+		+r($tM)
+			padding-left 71px
+		+r($t)
+			margin-bottom (28px/2)
+			padding-left (71px/1.7)
+			font-size (28px/1.4)
+
 	&__text
-		margin-bottom 42px
-	// &__progress
+		margin-bottom 33px
+		padding-right 80px
+		+r($d)
+			padding-right 0
+			text-align left
+		+r($t)
+			font-size (19px/1.4)
 	&__progress-title
-		margin-bottom 20px
+		margin-bottom 10px
 		font-size 24px
 		font-family $sB
-	// &__list
-
+		+r($d)
+			text-align left
+		+r($t)
+			font-size (24px/1.4)
 	&__list-item
 		position relative
-		margin-bottom 15px
-		padding-left 30px
+		margin-bottom 10px
+		padding-left 32px
+		+r($d)
+			text-align left
+		+r($t)
+			font-size (19px/1.4)
 		&:after
 			position absolute
 			top 0
@@ -88,9 +165,10 @@
 			height 24px
 			content ''
 			background url('../images/general/check-icon.svg') 0 0 no-repeat
-
-
 	.slick-dots
+		bottom 20px
+		+r($d)
+			bottom -20px
 		li
 			margin 0 6px
 			width 16px
@@ -99,8 +177,6 @@
 			padding 0
 			width 16px
 			height 16px
-			// width 7px
-			// height 7px
 			border-radius 50%
 			background transparent
 			&:before
@@ -123,7 +199,6 @@
 			&:before
 				background-color #333333
 
-
 	.slick-arrow
 		position absolute
 		width 50px
@@ -131,6 +206,7 @@
 		border 1px solid #12ab0e
 		background-color transparent
 		border-radius 50%
+		transform translate(0, calc(-50% + 10px))
 		&:before
 			position absolute
 			top 50%
@@ -139,17 +215,18 @@
 			height 16px
 			content ''
 			background url('../images/general/right-arrow.svg') 0 0 no-repeat
-			opacity 1
 			transform translate(calc(-50% + 1px), calc(-50% + 2px))
+		&:hover,
+		&:focus
+			background-image linear-gradient(to top, #00a113 0%, #31bc06 100%)
+			box-shadow 0 3px 4px rgba(0, 0, 0, 0.29)
+			tr(all .3s ease)
+			&:before
+				background url('../images/general/right-arrow-second.svg') 0 0 no-repeat
 	.slick-prev
-		left -55px
+		left -93px
 		&:before
 			transform translate(calc(-50% + 0px), calc(-50% + 1px)) rotate(-180deg)
-	// 		top 50%
-	// 		left 50%
 	.slick-next
-		right -55px
-	// 	&:before
-	// 		top 50%
-	// 		left 50%
+		right -93px
 

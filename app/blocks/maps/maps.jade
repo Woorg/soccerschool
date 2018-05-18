@@ -1,5 +1,51 @@
+include ../icon/icon
+
 mixin maps()
 	section.maps&attributes(attributes)
 		.maps__in
 			h2.maps__title адреса наших полей
 
+			ul.maps__list#menu
+				li.maps__item.maps__item_active
+					a.maps__link(href="" data-loc="1")
+						.maps__item-title
+							.maps__number 1
+							| Поле
+
+						.maps__address
+							+icon('address-icon', true).maps__icon
+							| г. Москва, ул. Кременчугская, д.42 к.1
+						.maps__open-hours
+							+icon('time-icon', true).maps__icon
+							| Понедельник — воскресенье:  9:00 — 23:00
+
+				li.maps__item
+					a.maps__link(href="" data-loc="2")
+						.maps__item-title
+							.maps__number 2
+							| Поле
+
+						.maps__address
+							+icon('address-icon', true).maps__icon
+							| г. Москва, ул. Кременчугская, д.42 к.1
+						.maps__open-hours
+							+icon('time-icon', true).maps__icon
+							| Понедельник — воскресенье:  9:00 — 23:00
+
+				li.maps__item
+					a.maps__link(href="" data-loc="3")
+						.maps__item-title
+							.maps__number 3
+							| Поле
+
+						.maps__address
+							+icon('address-icon', true).maps__icon
+							| г. Москва, ул. Кременчугская, д.42 к.1
+						.maps__open-hours
+							+icon('time-icon', true).maps__icon
+							| Понедельник — воскресенье:  9:00 — 23:00
+
+
+		.maps__object#gmap
+
+		.maps__right
